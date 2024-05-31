@@ -4,10 +4,6 @@ services:
   plan: Free
   env: docker
   autoDeploy: false
-  disk:
-    name: loggers
-    mountPath: /var/lib/mysql
-    sizeGB: 10
   envVars:
   - fromGroup: loggers
 
