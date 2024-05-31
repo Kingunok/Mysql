@@ -1,23 +1,23 @@
 services:
 - type: pserv
-  name: mysql
-  plan: standard
+  name: loggers
+  plan: Free
   env: docker
   autoDeploy: false
   disk:
-    name: mysql
+    name: loggers
     mountPath: /var/lib/mysql
     sizeGB: 10
   envVars:
-  - fromGroup: mysql
+  - fromGroup: loggers
 
 envVarGroups:
-- name: mysql
+- name: loggers
   envVars:
   - key: MYSQL_DATABASE
-    value: mysql
+    value: loggers
   - key: MYSQL_USER
-    value: mysql
+    value: loggers
   - key: MYSQL_PASSWORD
     generateValue: true
   - key: MYSQL_ROOT_PASSWORD
